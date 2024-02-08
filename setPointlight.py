@@ -17,8 +17,7 @@ def find_point_light_actor_by_label(label):
 
 # Set the intensity of the point light
 def set_point_light_intensity(actor_label, intensity):
-    point_light_actor = find_point_light_actor_by_label(actor_label)
-    if point_light_actor:
+    if point_light_actor := find_point_light_actor_by_label(actor_label):
         point_light_component = point_light_actor.light_component
         point_light_component.set_intensity(intensity)
         print(f"Point light intensity set to '{intensity}'")

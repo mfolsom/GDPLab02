@@ -18,8 +18,7 @@ def find_dir_light_actor_by_label(label):
             return actor
         return None
 def set_directional_light_intensity(actor_label, intensity):
-    directional_light_actor = find_dir_light_actor_by_label(actor_label)
-    if directional_light_actor:
+    if directional_light_actor := find_dir_light_actor_by_label(actor_label):
         directional_light_component = directional_light_actor.light_component
         directional_light_component.set_intensity(intensity)
         print(f"Directional Light intensity set to '{intensity}'")
